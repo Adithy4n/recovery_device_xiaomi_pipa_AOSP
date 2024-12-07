@@ -4,6 +4,9 @@
 
 # mount point          fstype  device                                        device2              flags
 
+# use a real partition for /cache
+/cache         		ext4    /dev/block/bootdevice/by-name/rescue			  	   flags=display="Cache";backup=1;wipeingui;wipeduringfactoryreset
+
 /metadata              	ext4    /dev/block/bootdevice/by-name/metadata                             flags=display="Metadata";backup=1;wrappedkey
 /cust                  	ext4    /dev/block/bootdevice/by-name/cust                                 flags=backup=1;display="Cust";flashimg=1
 /storage       	       	ext4    /data/media/0                  		     		 	   flags=backup=1;display="Internal Storage";usermrf;fsflags="bind";removable
