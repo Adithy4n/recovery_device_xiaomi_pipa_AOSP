@@ -61,7 +61,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_LZ4_BINARY=1
 	export FOX_USE_ZSTD_BINARY=1
     	export FOX_DELETE_AROMAFM=1
-    	export TARGET_DEVICE_ALT="aliothin"
+	export TARGET_DEVICE_ALT="aliothin,alioth"
 
 	# instruct magiskboot v24+ to always patch the vbmeta header when patching the recovery/boot image; do *not* remove!
         export FOX_PATCH_VBMETA_FLAG="1"
