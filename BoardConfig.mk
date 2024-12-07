@@ -80,6 +80,8 @@ BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE) --board ""
 
+KERNEL_PATH := $(DEVICE_PATH)/prebuilt
+
 # whether to do an inline build of the kernel sources [broken for vendor_boot targets]
 ifeq ($(FOX_BUILD_FULL_KERNEL_SOURCES),1)
     TARGET_KERNEL_SOURCE := kernel/xiaomi/$(PRODUCT_RELEASE_NAME)
@@ -95,7 +97,6 @@ ifeq ($(FOX_BUILD_FULL_KERNEL_SOURCES),1)
     LLVM := 1
     LLVM_IAS := 1
 else
-    KERNEL_PATH := $(DEVICE_PATH)/prebuilt
     TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/Image.gz-dtb
 #    BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
 endif
