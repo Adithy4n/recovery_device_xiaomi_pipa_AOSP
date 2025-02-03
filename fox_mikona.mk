@@ -1,6 +1,6 @@
 #
 #	This file is part of the OrangeFox Recovery Project
-# 	Copyright (C) 2023-2024 The OrangeFox Recovery Project
+# 	Copyright (C) 2023-2025 The OrangeFox Recovery Project
 #
 #	OrangeFox is free software: you can redistribute it and/or modify
 #	it under the terms of the GNU General Public License as published by
@@ -55,4 +55,7 @@ OF_BIND_MOUNT_SDCARD_ON_FORMAT := 1
 ifneq ($(FOX_VENDOR_BOOT_RECOVERY),1)
    OF_USE_LZ4_COMPRESSION := 1
 endif
+
+# build all the partition tools
+OF_ENABLE_ALL_PARTITION_TOOLS := 1
 #
