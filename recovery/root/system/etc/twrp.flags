@@ -9,7 +9,6 @@
 
 /metadata              	ext4    /dev/block/bootdevice/by-name/metadata                             flags=display="Metadata";backup=1;wrappedkey
 /cust                  	ext4    /dev/block/bootdevice/by-name/cust                                 flags=backup=1;display="Cust";flashimg=1
-/storage       	       	ext4    /data/media/0                  		     		 	   flags=backup=1;display="Internal Storage";usermrf;fsflags="bind";removable
 
 # Boot
 /boot                  	emmc    /dev/block/bootdevice/by-name/boot                                 flags=backup=1;slotselect;flashimg=1;
@@ -38,5 +37,6 @@
 /efsg                  	emmc    /dev/block/bootdevice/by-name/fsg                                  flags=backup=1;subpartitionof=/efs1
 
 # Removable storage
+/storage       	       	auto    /data/media/0                  		     		 	   flags=backup=1;display="Internal Storage";usermrf;fsflags="bind,utf8";removable
 /usb_otg               	auto    /dev/block/sdg1                    /dev/block/sdg4         	   flags=fsflags=utf8;display="USB-Storage";storage;wipeingui;removable
 #
