@@ -1,6 +1,6 @@
 # Copyright (c) 2017-2018,2020 The Linux Foundation. All rights reserved.
 #
-# Copyright (C) 2022-2024 The OrangeFox Recovery Project
+# Copyright (C) 2022-2025 The OrangeFox Recovery Project
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -59,7 +59,14 @@ service vendor.qti.vibrator /system/bin/vendor.qti.hardware.vibrator.service
     disabled
     setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
     seclabel u:r:recovery:s0
-    
+
+service healthy-boot /system/bin/healthy-boot.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 service unified-script /system/bin/unified-script.sh
     user root
     group root
@@ -76,6 +83,8 @@ on post-fs
 
 on boot
     chmod 0777 /system/bin/unified-script.sh
+    chmod 0777 /system/bin/healthy-boot.sh
+    start healthy-boot
     start unified-script
 
 on boot
