@@ -100,6 +100,7 @@ else
     TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
     BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
     BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+/modem_img             emmc    /dev/block/bootdevice/by-name/modem                                flags=backup=1;display="Modem";slotselect;flashimg=1
     BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtb
 endif
 
@@ -142,7 +143,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 LC_ALL := C
 
 # System as root
-BOARD_ROOT_EXTRA_FOLDERS := bluetooth dsp firmware persist
+BOARD_ROOT_EXTRA_FOLDERS := bluetooth firmware persist
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Broken stuff
