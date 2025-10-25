@@ -38,13 +38,6 @@ on early-fs
     write /proc/sys/kernel/sched_lib_name "recovery,Updater,updater,update_engine_sideload"
     write /proc/sys/kernel/sched_lib_mask_force 255
 
-service healthy-boot /system/bin/healthy-boot.sh
-    user root
-    group root
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
-
 service unified-script /system/bin/unified-script.sh
     user root
     group root
@@ -61,8 +54,6 @@ on post-fs
 
 on boot
     chmod 0777 /system/bin/unified-script.sh
-    chmod 0777 /system/bin/healthy-boot.sh
-    start healthy-boot
     start unified-script
 
 on boot
