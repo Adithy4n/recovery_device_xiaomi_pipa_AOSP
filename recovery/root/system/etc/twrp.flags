@@ -7,7 +7,6 @@
 /metadata              ext4    /dev/block/bootdevice/by-name/metadata                             flags=display="Metadata";backup=1;wrappedkey
 /data                  f2fs    /dev/block/bootdevice/by-name/userdata                             flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,metadata_encryption=aes-256-xts:wrappedkey_v0,keydirectory=/metadata/vold/metadata_encryption
 /cache                 ext4    /dev/block/bootdevice/by-name/rescue                               flags=display="Cache";backup=1;wipeingui;wipeduringfactoryreset
-/cust                  ext4    /dev/block/bootdevice/by-name/cust                                 flags=backup=1;display="Cust";flashimg=1
 /storage               f2fs    /data/media/0                                                      flags=backup=1;display="Internal Storage";usermrf;fsflags="bind,utf8";removable
 
 # Boot
@@ -19,7 +18,7 @@
 /misc                  emmc    /dev/block/bootdevice/by-name/misc                                 flags=backup=1;display="misc";flashimg=1
 
 # Persistent Firmware & Properties
-/persist               ext4    /dev/block/bootdevice/by-name/persist                              flags=display="Persist";fsflags="ro"
+/persist               ext4    /dev/block/bootdevice/by-name/persist                              flags=display="Persist";fsflags="ro";backup=1
 
 # Firmware partitions
 /bluetooth             vfat    /dev/block/bootdevice/by-name/bluetooth                            flags=display="bluetooth";slotselect;fsflags="ro,shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:bt_firmware_file:s0 wait"
@@ -30,5 +29,14 @@
 /efsg                  emmc    /dev/block/bootdevice/by-name/fsg                                  flags=backup=1;subpartitionof=/efs1
 
 # Removable storage
-/usb_otg               	auto    /dev/block/sdg1                    /dev/block/sdg4         	   flags=fsflags=utf8;display="USB-Storage";storage;wipeingui;removable
-#
+/usb_otg               auto    /dev/block/sdg1                      /dev/block/sdg4         	    flaflags=fsflags=utf8;display="USB-Storage";storage;wipeingui;removable
+
+# Linux partitions 
+/linux                 ext4    /dev/block/by-name/linux                                           flags=backup=1;display="Linux";flashimg=1
+/boot_b                emmc    /dev/block/bootdevice/by-name/boot_b                               flags=backup=1;display="Boot_Linux";flashimg=1
+/dtbo_b                emmc    /dev/block/bootdevice/by-name/dtbo_b                               flags=display="Dtbo_Linux_Nuke";wipeingui=1
+
+# Fedora atomic leftovers
+/cust                  ext4    /dev/block/bootdevice/by-name/cust                                 flags=display="Cust";flashimg=1;wipeingui=
+/rawdump               emmc    /dev/block/bootdevice/by-name/rawdump                              flags=display="Rawdump";flashing=1;wipeingui=1
+
