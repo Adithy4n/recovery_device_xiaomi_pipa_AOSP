@@ -20,10 +20,10 @@
 
 # screen settings
 OF_SCREEN_H := 2880
-OF_STATUS_H := 100
-OF_STATUS_INDENT_LEFT := 56
-OF_STATUS_INDENT_RIGHT := 56
-OF_CLOCK_POS := 1
+#OF_STATUS_H := 100
+#OF_STATUS_INDENT_LEFT := 56
+#OF_STATUS_INDENT_RIGHT := 56
+#OF_CLOCK_POS := 1
 
 # other stuff
 OF_USE_GREEN_LED := 0
@@ -35,7 +35,7 @@ OF_NO_TREBLE_COMPATIBILITY_CHECK := 1
 OF_DYNAMIC_FULL_SIZE := 9126805504
 
 # number of list options before scrollbar creation
-OF_OPTIONS_LIST_NUM := 9
+OF_OPTIONS_LIST_NUM := 15
 
 # ----- data format stuff -----
 # ensure that /sdcard is bind-unmounted before f2fs data repair or format
