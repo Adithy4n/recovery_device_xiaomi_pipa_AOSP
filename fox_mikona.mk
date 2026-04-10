@@ -18,6 +18,9 @@
 # 	Please maintain this if you use this script or any part of it
 #
 
+# maintainer name 
+OF_MAINTAINER := ADITHYAN
+
 # screen settings
 OF_SCREEN_H := 1728 #(2880 * 1080/1800)
 OF_STATUS_H := 100
@@ -25,10 +28,11 @@ OF_STATUS_INDENT_LEFT := 56
 OF_STATUS_INDENT_RIGHT := 56
 OF_HIDE_NOTCH := 1
 OF_CLOCK_POS := 1
+OF_ALLOW_DISABLE_NAVBAR := 0
 
 # other stuff
 OF_USE_GREEN_LED := 0
-OF_QUICK_BACKUP_LIST := /boot;/dtbo;
+OF_QUICK_BACKUP_LIST := /boot;/dtbo;vendor_boot;
 OF_ENABLE_LPTOOLS := 1
 OF_NO_TREBLE_COMPATIBILITY_CHECK := 1
 
@@ -36,7 +40,7 @@ OF_NO_TREBLE_COMPATIBILITY_CHECK := 1
 OF_DYNAMIC_FULL_SIZE := 9126805504
 
 # number of list options before scrollbar creation
-OF_OPTIONS_LIST_NUM := 9
+OF_OPTIONS_LIST_NUM := 2
 
 # ----- data format stuff -----
 # ensure that /sdcard is bind-unmounted before f2fs data repair or format
