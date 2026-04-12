@@ -64,6 +64,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 	export FOX_USE_FSCK_EROFS_BINARY=1
 	export FOX_USE_BUSYBOX_BINARY=1
+	export FOX_SETTINGS_ROOT_DIRECTORY=/cust
 
 	# instruct magiskboot v24+ to always patch the vbmeta header when patching the recovery/boot image; do *not* remove!
         export FOX_PATCH_VBMETA_FLAG="1"
