@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 # Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+# $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
@@ -67,11 +67,11 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl-qti.recovery
 
 PRODUCT_PACKAGES += \
-    otapreopt_script \
-    checkpoint_gc \
-    cppreopts.sh \
-    update_engine \
-    update_verifier \
+#    otapreopt_script \
+#   checkpoint_gc \
+#    cppreopts.sh \
+#    update_engine \
+#    update_verifier \
     update_engine_sideload
 
 # fastbootd
